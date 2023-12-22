@@ -25,10 +25,7 @@ fn basement_at_which_step(input: &str) -> Option<usize> {
             character if character == ')' => floor -= 1,
             _ => (),  
         };
-        match floor {
-            floor if floor == -1 => return Some(index + 1),
-            _ => (),
-        };
+        if floor == -1 { return Some(index + 1);}
     }
     None
 }
