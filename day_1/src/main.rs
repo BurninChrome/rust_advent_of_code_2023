@@ -29,6 +29,8 @@ fn basement_at_which_step(input: &str) -> Option<usize> {
     }
     None
 }
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
