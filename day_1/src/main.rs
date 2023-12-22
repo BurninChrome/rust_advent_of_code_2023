@@ -14,6 +14,7 @@ fn elevator(input: &str) -> i32 {
 }
 
 fn basement_at_which_step(input: &str) -> Option<usize> {
+    // returns number of instructions after which the -1 floor is reached
     let mut floor: i32 = 0;
     for (index, instruction) in input.chars().enumerate() {
         floor = match_instruction(instruction, floor);
@@ -23,6 +24,7 @@ fn basement_at_which_step(input: &str) -> Option<usize> {
 }
 
 fn match_instruction(instruction: char, floor: i32) -> i32 {
+    // matches instruction code with floor change ( = +1 ) = -1 and returns current floor
     let f = floor;
     match instruction {
         instruction if instruction == '(' => return f + 1,
