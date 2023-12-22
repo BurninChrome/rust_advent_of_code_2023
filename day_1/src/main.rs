@@ -7,11 +7,11 @@ fn main() {
 fn elevator(input: &str) -> i32 {
     // returns floor at which the santa should exit the elevator
     let mut floor = 0;
-    for character in input.chars() {
-        match character {
-            character if character == '(' => floor += 1,
-            character if character == ')' => floor -= 1,
-            _ => continue,           
+    for instruction in input.chars() {
+        match instruction {
+            instruction if instruction == '(' => floor += 1,
+            instruction if instruction == ')' => floor -= 1,
+            _ => (),           
         };
     }
     floor
@@ -21,8 +21,8 @@ fn basement_at_which_step(input: &str) -> Option<usize> {
     let mut floor: i32 = 0;
     for (index, instruction) in input.chars().enumerate() {
         match instruction {
-            character if character == '(' => floor += 1,
-            character if character == ')' => floor -= 1,
+            instruction if instruction == '(' => floor += 1,
+            instruction if instruction == ')' => floor -= 1,
             _ => (),  
         };
         if floor == -1 { return Some(index + 1);}
